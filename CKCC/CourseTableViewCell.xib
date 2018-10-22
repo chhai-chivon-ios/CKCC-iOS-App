@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_course" rowHeight="120" id="cDL-sj-Nje" customClass="CourseTableViewCell" customModule="CKCC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cDL-sj-Nje" id="bLw-4u-Inq">
+                <rect key="frame" x="0.0" y="0.0" width="470" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_course" translatesAutoresizingMaskIntoConstraints="NO" id="Cga-us-aWL">
+                        <rect key="frame" x="40" y="31" width="60" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="wL2-6M-ebW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXe-Od-mhS">
+                        <rect key="frame" x="108" y="31" width="34" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XXe-Od-mhS" firstAttribute="top" secondItem="bLw-4u-Inq" secondAttribute="topMargin" constant="20" id="F8d-JM-v0J"/>
+                    <constraint firstItem="XXe-Od-mhS" firstAttribute="leading" secondItem="Cga-us-aWL" secondAttribute="trailing" constant="8" symbolic="YES" id="MG6-wi-V7V"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Cga-us-aWL" secondAttribute="bottom" constant="20" id="OnO-IO-2lQ"/>
+                    <constraint firstItem="Cga-us-aWL" firstAttribute="top" secondItem="bLw-4u-Inq" secondAttribute="topMargin" constant="20" id="W5S-mn-H0I"/>
+                    <constraint firstItem="Cga-us-aWL" firstAttribute="leading" secondItem="bLw-4u-Inq" secondAttribute="leadingMargin" constant="20" id="vqx-sZ-QhI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="courseImageView" destination="Cga-us-aWL" id="KPg-0U-eIS"/>
+                <outlet property="courseTitleLabel" destination="XXe-Od-mhS" id="mf4-l9-TYt"/>
+            </connections>
+            <point key="canvasLocation" x="150" y="-41"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_course" width="24" height="24"/>
+    </resources>
+</document>
