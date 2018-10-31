@@ -20,7 +20,7 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Load profile from Web Service
-        let url = URL(string: "http://test.js-cambodia.com/ckcc/profile.php")!
+        let url = URL(string: "http://test.js-cambodia.com/ckcc/profile.php?id=1")!
         //let url = URL(string: "http://localhost/test/ckcc/profile.php")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             print("Request completed")
@@ -34,6 +34,7 @@ class ProfileTableViewController: UITableViewController {
                     self.genderLabel.text = profile.gender
                     self.dobLabel.text = profile.dob
                 }
+                self.loadProfileImage(profileImageUrl: profile.imageUrl)
             } else {
                 print("Decode data error...")
             }
@@ -41,5 +42,33 @@ class ProfileTableViewController: UITableViewController {
         print("Start requesting to server...")
         task.resume()
     }
+    
+    private func loadProfileImage(profileImageUrl: String){
+        let url = URL(string: profileImageUrl)!
+        let tastk = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            let image = UIImage(data: data!)
+            DispatchQueue.main.async {
+                self.profileImageView.image = image
+            }
+        }
+        tastk.resume()
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
